@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "name": "Sheet Metal Shop",
+            "bldg": "170",
+            "image": "/images/shops/sheetmetal.jpg"
+        },
+        {
+            "name": "Wood Shop",
+            "bldg": "170",
+            "image": "/images/shops/170.jpg"
+        },
+        {
+            "name": "Metal Store",
+            "bldg": "170",
+            "image": "/images/shops/metalstore.jpg"
+        },
+        {
+            "name": "Machine Shop",
+            "bldg": "170",
+            "image": "/images/shops/maxchineshop.jpg"
+        }
+    ]
+}

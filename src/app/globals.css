@@ -2,32 +2,175 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  @font-face {
+    font-family: "Helvetica Neue LT Std Light";
+    src: url("/font/Helvetica-Lt.otf") format("opentype");
   }
-}
+  @font-face {
+    font-family: "Helvetica Neue LT Std Bold";
+    src: url("/font/Helvetica-Bd.otf") format("opentype");
+  }
+  @font-face {
+    font-family: "Helvetica Neue LT Std Bold Con";
+    src: url("/font/Helvetica-BdCn.otf") format("opentype");
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  @font-face {
+    font-family: "Helvetica Neue LT Std Con";
+    src: url("/font/Helvetica-Cn.otf") format("opentype");
+  }
+  @font-face {
+    font-family: "Helvetica Neue LT Md";
+    src: url("/font/Helvetica-Md.otf") format("opentype");
+  }
+  @font-face {
+    font-family: "Helvetica Neue LT Roman";
+    src: url("/font/Helvetica-Roman.otf") format("opentype");
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  @font-face {
+    font-family: "Ace Sans Black";
+    src: url("/font/AceSansBlack.woff2") format("woff2"),
+      url("/font/AceSansBlack.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ace Sans Black Oblique";
+    src: url("/font/AceSansBlackOblique.woff2") format("woff2"),
+      url("/font/AceSansBlackOblique.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ace Sans Bold";
+    src: url("/font/AceSansBold.woff2") format("woff2"),
+      url("/font/AceSansBold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ace Sans Extrabold";
+    src: url("/font/AceSansExtrabold.woff2") format("woff2"),
+      url("/font/AceSansExtrabold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ace Sans Bold Oblique";
+    src: url("/font/AceSansBoldOblique.woff2") format("woff2"),
+      url("/font/AceSansBoldOblique.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ace Sans Extrabold Oblique";
+    src: url("/font/AceSansExtraboldOblique.woff2") format("woff2"),
+      url("/font/AceSansExtraboldOblique.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ace Sans";
+    src: url("/font/AceSansExtralight.woff2") format("woff2"),
+      url("/font/AceSansExtralight.woff") format("woff");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ace Sans";
+    src: url("/font/AceSansLight.woff2") format("woff2"),
+      url("/font/AceSansLight.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ace Sans Medium";
+    src: url("/font/AceSansMedium.woff2") format("woff2"),
+      url("/font/AceSansMedium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ace Sans Light Oblique";
+    src: url("/font/AceSansLightOblique.woff2") format("woff2"),
+      url("/font/AceSansLightOblique.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ace Sans Extralight Oblique";
+    src: url("/font/AceSansExtralightOblique.woff2") format("woff2"),
+      url("/font/AceSansExtralightOblique.woff") format("woff");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ace Sans Thin Oblique";
+    src: url("/font/AceSansThinOblique.woff2") format("woff2"),
+      url("/font/AceSansThinOblique.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ace Sans Oblique";
+    src: url("/font/AceSansOblique.woff2") format("woff2"),
+      url("/font/AceSansOblique.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ace Sans";
+    src: url("/font/AceSansThin.woff2") format("woff2"),
+      url("/font/AceSansThin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ace Sans Medium Oblique";
+    src: url("/font/AceSansMediumOblique.woff2") format("woff2"),
+      url("/font/AceSansMediumOblique.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ace Sans";
+    src: url("/font/AceSansRegular.woff2") format("woff2"),
+      url("/font/AceSansRegular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
   }
 }
